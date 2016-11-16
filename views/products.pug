@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	.container.theme-showcase(role='main')
+		h1= title
+		.row
+			.col-md-6.col-offset-3
+				.jumbotron(ng-controller="demoCtrl")
+					ul.list-group
+						li.list-group-items(ng-repeat='elem in products')
+							| {{elem.title}}	
+						//
+							each elem,index in data
+								li.list-group-item(data-index=elem.id)= elem.title

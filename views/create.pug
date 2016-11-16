@@ -1,0 +1,48 @@
+extends layout
+
+block content
+	.container.theme-showcase(role='main')
+		h1= title
+
+	.container
+		h1
+			span.glyphicon.glyphicon-pencil.icon_create
+			|  Añadir producto o servicio
+	.container
+		.row
+			form.form-grup(action='/create', method='POST', role='form')
+				.form-group
+					.col-md-8
+						.row
+							.col-md-4
+								label.control-label(for='input') Título:
+								input.form-control(type='text', name='title', required='')
+							.col-md-4
+								label.control-label(for='input') Precio:
+								input.form-control(type='text', name='price', required='')
+							.col-md-4
+								.form-group
+									label(for='sel1') Selecciona el tipo:
+									select#sel1.form-control(name='type', required="")
+										option(selected='', disabled='') Selecciona una opción
+										option producto
+										option servicio
+								
+							//	
+								label.control-label(for='input') Tipo:
+								div(ng-controller='DropdownCtrl')
+									span(uib-dropdown='', on-toggle='toggled(open)')
+										a#simple-dropdown(href='', uib-dropdown-toggle='')
+											| Elige una opción
+										ul.dropdown-menu(uib-dropdown-menu='', aria-labelledby='simple-dropdown')
+											li(ng-repeat='choice in items')
+												a(href='') {{choice}}			
+							.col-md-12
+								label.control-label(for='input') Descripción:
+								textarea.form-control(type='text' name='desc', rows='8', cols='100', required='')
+							.col-md-12
+								label.control-label(for='input') Imagen:
+								input.form-control(type='text', name='url', required='')
+				.col-md-12
+					button.btncrear.btn.botton_create(type='submit') Crear
+
