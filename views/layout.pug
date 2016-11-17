@@ -4,6 +4,7 @@ html(lang='en', ng-app="myApp")
     title Curling The Curl Styling
     link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel="stylesheet", href='/css/main.css')
+    link(rel="stylesheet", href='/css/modals.css')
 
   body
     include ./includes/navbar.pug
@@ -13,8 +14,11 @@ html(lang='en', ng-app="myApp")
     include ./includes/footer.pug
     
     script(src='https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js')
+    
     script(src='/js/libs/ui-bootstrap-custom-2.2.0.min.js')
+    script(src='/bower_components/angular-modal-service/dst/angular-modal-service.min.js')
+
     script(type='text/javascript',src='/js/app.js')
     script(src='/js/controller.js')
     script(src='/js/service.js')

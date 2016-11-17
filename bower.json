@@ -1,0 +1,17 @@
+{
+  "name": "rizando",
+  "description": "",
+  "main": "app.js",
+  "license": "ISC",
+  "homepage": "https://github.com/FerranGT/Curlingthecurl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-modal-service": "^0.10.1"
+  }
+}
