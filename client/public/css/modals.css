@@ -1,12 +1,12 @@
 #overlay {
     position: fixed;
-    left: 25%;
-    top: 25%;
+    left: 15%;
+    top: 10%;
     padding: 25px;
     border: 2px solid black;
     background-color: #ffffff;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 75%;
     z-index: 100;
 }
 #fade {
@@ -35,4 +35,30 @@
 }
 #custom-modal.ng-leave.ng-leave-active {
   opacity: 0;
+}
+
+#custom-modal {
+  overflow: scroll;
+}
+
+.modal_scroll{
+  overflow: scroll;
+  height: 500px;
+}
+
+.image_size_modal{
+  display: block;
+  height: inherit;
+  object-fit: cover;
+  margin: auto;
+  //min-width: 50%;
+}
+
+.image_product_modal{
+  height: 350px;
+  padding: 5px;
+  border:1px solid #d7d7d7;
+  margin-bottom: 60px;
+  padding-bottom: 350px;
+  margin-top: 15px;
 }

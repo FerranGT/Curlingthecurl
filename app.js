@@ -1,8 +1,13 @@
+//Ejecutar daemon: mongod --dbpath ~/data/db
+
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient
 const bodyparser = require('body-parser')
-const getRouterProducts = require('./routes/products');
-const getRouterCreate = require('./routes/create');
+const http = require('http');
+const path = require('path');
+const getRouterProducts = require('./server/routes/products');
+const getRouterCreate = require('./server/routes/create');
+const getRouterServices = require('./server/routes/services');
 
 
 const url = "mongodb://localhost:27017/curlingthecurl"
@@ -16,11 +21,13 @@ var db = MongoClient.connect(url)
 db.then((db) => {
 
 	app.set('view engine', 'pug')
-	app.use( express.static('public') )
+	app.set('views', path.join(__dirname , '/server/views'));
+	app.use( express.static('./client/public') )
 	app.use( bodyparser.urlencoded({ extended: false }) )
 
 	
 	app.use('/products', getRouterProducts(db) )
+	app.use('/services', getRouterServices(db) )
 	app.use('/create', getRouterCreate(db) )
 
 	app.get('/', (req,res) => {
