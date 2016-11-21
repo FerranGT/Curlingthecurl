@@ -1,9 +1,9 @@
 extends layout
 
 block content
-
+	h1= title
 	.container.container-create
-		.col-md-6#container-left
+		.col-md-12
 			h1
 				span.glyphicon.glyphicon-pencil.icon_create
 				|  Añadir producto o servicio
@@ -14,7 +14,7 @@ block content
 						.row
 							.col-md-4
 								label.control-label(for='input') Título:
-								input.form-control(type='text', name='title', required='')
+								input.form-control(type='text', name='title', required='', value=data.title)
 							.col-md-4
 								label.control-label(for='input') Precio:
 								input.form-control(type='text', name='price', required='')
