@@ -2,12 +2,16 @@
 
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient
+
 const bodyparser = require('body-parser')
+
 const http = require('http');
 const path = require('path');
+
 const getRouterProducts = require('./server/routes/products');
 const getRouterCreate = require('./server/routes/create');
 const getRouterServices = require('./server/routes/services');
+const getRouterItems = require('./server/routes/items');
 
 
 const url = "mongodb://localhost:27017/curlingthecurl"
@@ -29,6 +33,7 @@ db.then((db) => {
 	app.use('/products', getRouterProducts(db) )
 	app.use('/services', getRouterServices(db) )
 	app.use('/create', getRouterCreate(db) )
+	app.use('/items', getRouterItems(db) )
 
 	app.get('/', (req,res) => {
 		const title = "Curling The Curl Styling"

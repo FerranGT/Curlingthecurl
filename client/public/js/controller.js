@@ -5,6 +5,7 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 		$scope.findProducts = () => {
 			DataService.getProducts()
 			.then( (response) => {
+				$scope.productsServices = response.data;
 				$scope.products = response.data.filter((elem) => {
 					if (elem.type=="producto" && !!elem.url) {return elem}
 				});
@@ -34,6 +35,36 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 			.catch( err => console.log(err) )
 
 		};
+
+		$scope.deleteElement = (id) => {
+			let arrayTemp = $scope.productsServices;
+
+		    if (confirm("Estas seguro que quieres eliminar este elemento") == true) {
+				DataService.deleteItem(id)
+					.success( (data, status, headers) => {
+						console.log("before map: " + $scope.productsServices)
+						$scope.productsServices = arrayTemp.filter((elem) => {
+							if(elem._id != id) { return elem }
+						})
+						console.log("removed succesfully!")
+
+		                $scope.ServerResponse = data;
+		            })
+		            .catch( err => console.log(err) )
+	        }
+
+		}
+
+		$scope.updateElement = (id) => {
+			console.log("controller: " + id);
+			DataService.updateItem(id)
+				.success( (data, status, headers) => {
+					console.log("removed succesfully!")
+		        })
+		        .catch( err => console.log(err) )
+		}
+
+
 
 	})
 

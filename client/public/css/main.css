@@ -75,3 +75,7 @@ body {
 #container-right {
   margin-left: 90px;
 }
+
+#link-delete {
+  color: red;
+}

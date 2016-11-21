@@ -35,25 +35,3 @@ block content
 				
 				.col-md-12
 					button.btncrear.btn.botton_create(type='submit') Crear
-
-		.col-md-6#container-right(ng-controller='productsCtrl')
-					h1.text-center Base de Datos
-					table.table.table-hover
-						thead
-							tr
-								th #
-								th Title
-								th Type
-								th Action
-						tbody
-							tr(ng-repeat='ps in productsServices | orderBy:"type"')
-								th(scope='row') {{$index}}
-								td {{ ps.title }} 
-								td {{ ps.type }} 
-								td  
-									a#link-update(href="#", ng-click='updateElement(ps)') update
-									//a(href="#") update
-									br
-									a#link-delete(href="#", ng-click='deleteElement(ps._id)') delete
-						
-
