@@ -1,14 +1,13 @@
 extends layout
 
 block content
-	h1= title
 	.container.container-create
 		.col-md-12
 			h1
 				span.glyphicon.glyphicon-pencil.icon_create
-				|  Añadir producto o servicio
+				|  Actualiza producto o servicio
 		
-			form.form-grup(action='/create', method='POST', role='form')
+			form.form-grup(action='/items', method='POST', role='form')
 				.form-group
 					.col-md-12
 						.row
@@ -17,21 +16,28 @@ block content
 								input.form-control(type='text', name='title', required='', value=data.title)
 							.col-md-4
 								label.control-label(for='input') Precio:
-								input.form-control(type='text', name='price', required='')
+								input.form-control(type='text', name='price', required='', value=data.price)
 							.col-md-4
 								.form-group
 									label(for='sel1') Selecciona el tipo:
-									select#sel1.form-control(name='type', required="")
+									select#sel1.form-control(name='type', required="", value=data.type)
 										option(selected='', disabled='') Selecciona una opción
-										option producto
-										option servicio
+										if data.type=='producto'
+											option(selected='') producto
+											option servicio
+										else
+											option producto
+											option(selected='') servicio
 											
 							.col-md-12
 								label.control-label(for='input') Descripción:
-								textarea.form-control(type='text' name='desc', rows='8', cols='100', required='')
+								textarea.form-control(type='text' name='desc', rows='8', cols='100', required='')= data.desc
 							.col-md-12
 								label.control-label(for='input') Imagen:
-								input.form-control(type='text', name='url', required='')
+								input.form-control(type='text', name='url', required='', value=data.url)
+							.col-md-12
+								label.control-label.hidden(for='input') ID:
+								input.form-control.hidden(type='text', name='_id', required='', value=data._id)
 				
 				.col-md-12
 					button.btncrear.btn.botton_create(type='submit') Crear
