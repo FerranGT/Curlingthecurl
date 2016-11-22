@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+	.container.container-create
+		div(ng-controller='AppCtrl')
+			form
+				h2 Reserva Cita		
+				.form-group
+					label Fecha:
+					.control
+						input.form-control(type='date', ng-model='date' ng-change='getdate()')
+

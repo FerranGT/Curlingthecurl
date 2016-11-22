@@ -84,7 +84,18 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 		//$scope.title = "my Modal Window"
 	})
 
-
+	.controller('AppCtrl', function($scope) {
+        //$scope.date = new Date(2014, 3, 19);
+        
+        $scope.getdate = () => {
+        	console.log($scope.date);
+        	// let day = $scope.date;
+        	// let temp = day.stringify.split(" ");
+        	//let new array = [temp[1],temp[2],temp[3]];
+        	//let day = temp[1]
+        	//DataService.getDay(day);
+        }
+    })
 
 
 

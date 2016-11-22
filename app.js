@@ -12,6 +12,7 @@ const getRouterProducts = require('./server/routes/products');
 const getRouterCreate = require('./server/routes/create');
 const getRouterServices = require('./server/routes/services');
 const getRouterItems = require('./server/routes/items');
+const getRouterDate = require('./server/routes/date');
 
 
 const url = "mongodb://localhost:27017/curlingthecurl"
@@ -34,6 +35,7 @@ db.then((db) => {
 	app.use('/services', getRouterServices(db) )
 	app.use('/create', getRouterCreate(db) )
 	app.use('/items', getRouterItems(db) )
+	app.use('/date', getRouterDate(db) )
 
 	app.get('/', (req,res) => {
 		const title = "Curling The Curl Styling"
