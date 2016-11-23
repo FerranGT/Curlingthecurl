@@ -15,14 +15,18 @@ const getRouterItems = require('./server/routes/items');
 const getRouterAppointments = require('./server/routes/appointments');
 const getRouterApi = require('./server/routes/api');
 
+const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
+let urlDB = "mongodb://localhost:27017/curlingthecurl";
 
-const url = "mongodb://localhost:27017/curlingthecurl"
+if (ENVIRONMENT === 'production') {
+	urlDB = 'mongodb://admin:admin12345@ds135797.mlab.com:35797/curlingthecurl';
+}
 
 const PORT = 3000
 
 const app = express()
 
-var db = MongoClient.connect(url)
+var db = MongoClient.connect(urlDB)
 
 db.then((db) => {
 
