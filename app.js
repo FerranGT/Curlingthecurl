@@ -12,7 +12,8 @@ const getRouterProducts = require('./server/routes/products');
 const getRouterCreate = require('./server/routes/create');
 const getRouterServices = require('./server/routes/services');
 const getRouterItems = require('./server/routes/items');
-const getRouterDate = require('./server/routes/date');
+const getRouterAppointments = require('./server/routes/appointments');
+const getRouterApi = require('./server/routes/api');
 
 
 const url = "mongodb://localhost:27017/curlingthecurl"
@@ -35,7 +36,8 @@ db.then((db) => {
 	app.use('/services', getRouterServices(db) )
 	app.use('/create', getRouterCreate(db) )
 	app.use('/items', getRouterItems(db) )
-	app.use('/date', getRouterDate(db) )
+	app.use('/appointments', getRouterAppointments(db) )
+	app.use('/api', getRouterApi(db) )
 
 	app.get('/', (req,res) => {
 		const title = "Curling The Curl Styling"
