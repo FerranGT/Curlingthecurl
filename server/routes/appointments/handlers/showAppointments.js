@@ -2,14 +2,17 @@ const appointment = require('../../../models/appointments')
 
 function showAppointments (req,res) {
 
-	
 
 	const { dateAppointment } = req.params;
 
-	console.log(dateAppointment);
+	const filter = { date:+dateAppointment }
+	console.log(filter);
 
-	appointment.find(dateAppointment)
-		.then( appointments => res.json(appointments) )
+	appointment.find( filter )
+		.then( appointments => {
+			console.log(appointments)
+			res.json(appointments)
+		})
 		.catch( err => new Error(err) )
 }
 

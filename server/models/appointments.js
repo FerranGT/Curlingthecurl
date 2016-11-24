@@ -4,7 +4,7 @@ const collection = 'appointments';
 
 // Schema definition
 const appointmentSchema = new mongoose.Schema({
-	date: String,
+	date: Number,
 	time: Number,
 },
 { collection });

@@ -91,8 +91,8 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
         	const dateAppointment = new Date($scope.date).getTime();
         	console.log(dateAppointment);
         	DataService.addDate(dateAppointment)
-				.success( (data, status, headers) => {
-					console.log("updated succesfully!")
+				.then( (data, status, headers) => {
+					console.log(data);
 		        })
 		        .catch( err => console.log(err) )
         	// let day = $scope.date;
@@ -103,31 +103,5 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
         }
     })
 
-
-
-
-// .controller('DropdownCtrl', function ($scope, $log) {
-// 	$scope.items = [
-// 	'Servicio',
-// 	'Producto'
-// 	];
-
-// 	$scope.status = {
-// 		isopen: false
-// 	};
-
-// 	$scope.toggled = function(open) {
-// 		$log.log('Dropdown is now: ', open);
-// 	};
-
-// 	$scope.toggleDropdown = function($event) {
-// 		$event.preventDefault();
-// 		$event.stopPropagation();
-// 		$scope.status.isopen = !$scope.status.isopen;
-// 	};
-
-// 	$scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
-// 	$log.log($scope.appendToEl)
-// });
 
 
