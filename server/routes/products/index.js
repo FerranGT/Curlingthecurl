@@ -3,13 +3,12 @@ const router = express.Router();
 
 
 const getHtml = require('./handlers/getHtml');
-const getJson = require('./handlers/getJson');
 
 
-function getRouter(db) {
 
-	router.get('/', getHtml.bind(null, db) )
-	router.get('/json', getJson.bind(null, db)  )
+function getRouter() {
+
+	router.get('/', getHtml )
 
 	return router;
 

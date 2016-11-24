@@ -5,9 +5,9 @@ const router = express.Router();
 const getHtml = require('./handlers/getHtml');
 
 
-function getRouter(db) {
+function getRouter() {
 
-	router.get('/', getHtml.bind(null, db) )
+	router.get('/', getHtml )
 
 	return router;
 

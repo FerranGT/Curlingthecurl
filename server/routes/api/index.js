@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
+
 const getArticles = require('./handlers/getArticles');
 const getAppointments = require('./handlers/getAppointments');
 
 
-function getRouter(db) {
+function getRouter() {
 
-	router.get('/articles/', getArticles.bind(null, db)  )
-	router.get('/appointments/', getAppointments.bind(null, db)  )
+	router.get('/articles/', getArticles )
+	router.get('/appointments/', getAppointments  )
 
 	return router;
 

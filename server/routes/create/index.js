@@ -6,10 +6,10 @@ const getHtml = require('./handlers/getHtml');
 const postServiceProduct = require('./handlers/postServiceProduct');
 
 
-function getRouter(db) {
+function getRouter() {
 
-	router.get('/', getHtml.bind(null, db) )
-	router.post('/', postServiceProduct.bind(null, db)  )
+	router.get('/', getHtml )
+	router.post('/', postServiceProduct )
 
 	return router;
 

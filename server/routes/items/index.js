@@ -7,11 +7,11 @@ const updateItem = require('./handlers/updateItem');
 const getHtml = require('./handlers/getHtml');
 
 
-function getRouter(db) {
+function getRouter() {
 
-	router.delete('/:id', deleteItem.bind(null, db) )
-	router.post('/', updateItem.bind(null, db) )
-	router.get('/update/:id', getHtml.bind(null, db) )
+	router.delete('/:id', deleteItem )
+	router.post('/', updateItem )
+	router.get('/update/:id', getHtml )
 
 	return router;
 

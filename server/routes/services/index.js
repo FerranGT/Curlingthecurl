@@ -7,7 +7,7 @@ const getHtml = require('./handlers/getHtml');
 
 function getRouter(db) {
 
-	router.get('/', getHtml.bind(null, db) )
+	router.get('/', getHtml )
 
 	return router;
 

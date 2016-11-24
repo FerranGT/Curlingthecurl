@@ -1,6 +1,7 @@
 //Ejecutar daemon: mongod --dbpath ~/data/db
 
 const express = require('express')
+const db = require('./server/db');
 const MongoClient = require('mongodb').MongoClient
 
 const bodyparser = require('body-parser')
@@ -15,20 +16,21 @@ const getRouterItems = require('./server/routes/items');
 const getRouterAppointments = require('./server/routes/appointments');
 const getRouterApi = require('./server/routes/api');
 
-const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
-let urlDB = "mongodb://localhost:27017/curlingthecurl";
+//const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
 
-if (ENVIRONMENT === 'production') {
-	urlDB = 'mongodb://admin:admin12345@ds135797.mlab.com:35797/curlingthecurl';
-}
+// const urlDB = "mongodb://localhost:27017/curlingthecurl";
+
+// if (ENVIRONMENT === 'production') {
+// 	urlDB = 'mongodb://admin:admin12345@ds135797.mlab.com:35797/curlingthecurl';
+// }
 
 const PORT = 3000
 
 const app = express()
 
-var db = MongoClient.connect(urlDB)
+//const db = MongoClient.connect(urlDB)
 
-db.then((db) => {
+//db.then((db) => {
 
 	app.set('view engine', 'pug')
 	app.set('views', path.join(__dirname , '/server/views'));
@@ -36,12 +38,12 @@ db.then((db) => {
 	app.use( bodyparser.urlencoded({ extended: false }) )
 
 	
-	app.use('/products', getRouterProducts(db) )
-	app.use('/services', getRouterServices(db) )
-	app.use('/create', getRouterCreate(db) )
-	app.use('/items', getRouterItems(db) )
-	app.use('/appointments', getRouterAppointments(db) )
-	app.use('/api', getRouterApi(db) )
+	app.use('/products', getRouterProducts() )
+	app.use('/services', getRouterServices() )
+	app.use('/create', getRouterCreate() )
+	app.use('/items', getRouterItems() )
+	app.use('/appointments', getRouterAppointments() )
+	app.use('/api', getRouterApi() )
 
 	app.get('/', (req,res) => {
 		const title = "Curling The Curl Styling"
@@ -50,9 +52,9 @@ db.then((db) => {
 
 	app.listen(PORT, () => console.log(`Listening on port ${PORT}...`) )
 
-})
-.catch(function(err) {
-	throw new Error("something failed in the connection");
-})
+//})
+// .catch(function(err) {
+// 	throw new Error("something failed in the connection");
+// })
 
 
