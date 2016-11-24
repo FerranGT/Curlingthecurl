@@ -84,11 +84,17 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 		//$scope.title = "my Modal Window"
 	})
 
-	.controller('AppCtrl', function($scope) {
-        //$scope.date = new Date(2014, 3, 19);
+	.controller('AppCtrl', function($scope,DataService) {
         
         $scope.getdate = () => {
         	console.log($scope.date);
+        	const dateAppointment = new Date($scope.date).getTime();
+        	console.log(dateAppointment);
+        	DataService.addDate(dateAppointment)
+				.success( (data, status, headers) => {
+					console.log("updated succesfully!")
+		        })
+		        .catch( err => console.log(err) )
         	// let day = $scope.date;
         	// let temp = day.stringify.split(" ");
         	//let new array = [temp[1],temp[2],temp[3]];

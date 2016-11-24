@@ -1,11 +1,11 @@
-const article = require('../../../models/articles')
+const appointment = require('../../../models/appointments')
 
 function getHtml (req,res) {
 
 	const title = "Appointments"
 
-	article.find()
-		.then( articles => res.render('appointments', { title, articles } ))
+	appointment.find()
+		.then( appointments => res.render('appointments', { title, appointments } ))
 		.catch( err => new Error(err) )
 
 // 	db.collection("serviceproduct")

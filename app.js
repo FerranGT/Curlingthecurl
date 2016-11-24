@@ -13,7 +13,7 @@ const getRouterProducts = require('./server/routes/products');
 const getRouterCreate = require('./server/routes/create');
 const getRouterServices = require('./server/routes/services');
 const getRouterItems = require('./server/routes/items');
-const getRouterAppointments = require('./server/routes/appointments');
+const routerAppointments = require('./server/routes/appointments');
 const getRouterApi = require('./server/routes/api');
 
 //const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
@@ -42,7 +42,7 @@ const app = express()
 	app.use('/services', getRouterServices() )
 	app.use('/create', getRouterCreate() )
 	app.use('/items', getRouterItems() )
-	app.use('/appointments', getRouterAppointments() )
+	app.use('/appointments', routerAppointments )
 	app.use('/api', getRouterApi() )
 
 	app.get('/', (req,res) => {

@@ -15,10 +15,10 @@ angular.module('myServices',[])
 			return $http.put("http://localhost:3000/items/" + id)
 		}
 
-		function getDay(day){
-			console.log("service: " + day);
-			return $http.get("http://localhost:3000/date/" + day)
+		function addDate(dateAppointment){
+			console.log("service: " + dateAppointment);
+			return $http.get("http://localhost:3000/appointments/show/" + dateAppointment)
 		}
 
-		return { getProducts, deleteItem, updateItem }
+		return { getProducts, deleteItem, updateItem, addDate }
 	})

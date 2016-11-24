@@ -1,4 +1,4 @@
-const ObjectID = require('mongodb').ObjectID
+const Article = require('../../../models/articles')
 
 function updateItem (req,res) {
 	
