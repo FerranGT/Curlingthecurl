@@ -4,14 +4,6 @@ const router = express.Router();
 
 const getHtml = require('./handlers/getHtml');
 
+router.get('/', getHtml )
 
-
-function getRouter() {
-
-	router.get('/', getHtml )
-
-	return router;
-
-}
-
-module.exports = getRouter;
+module.exports = router;

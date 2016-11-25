@@ -1,20 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-
 const deleteItem = require('./handlers/deleteItem');
 const updateItem = require('./handlers/updateItem');
 const getHtml = require('./handlers/getHtml');
 
+router.delete('/:id', deleteItem )
+router.post('/', updateItem )
+router.get('/update/:id', getHtml )
 
-function getRouter() {
-
-	router.delete('/:id', deleteItem )
-	router.post('/', updateItem )
-	router.get('/update/:id', getHtml )
-
-	return router;
-
-}
-
-module.exports = getRouter;
+module.exports = router;

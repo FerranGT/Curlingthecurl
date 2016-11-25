@@ -5,14 +5,7 @@ const router = express.Router();
 const getHtml = require('./handlers/getHtml');
 const postServiceProduct = require('./handlers/postServiceProduct');
 
+router.get('/', getHtml )
+router.post('/', postServiceProduct )
 
-function getRouter() {
-
-	router.get('/', getHtml )
-	router.post('/', postServiceProduct )
-
-	return router;
-
-}
-
-module.exports = getRouter;
+module.exports = router;
