@@ -64,7 +64,6 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 		        .catch( err => console.log(err) )
 		}
 
-
 		$scope.updateElement = (id) => {
 			console.log("controller: " + id);
 			DataService.updateItem(id)
@@ -75,17 +74,19 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 		}
 
 
-
 	})
-
 
 	.controller('CustomController', function($scope, close) {
 		$scope.close = close;
-		//$scope.title = "my Modal Window"
 	})
 
-	.controller('AppCtrl', function($scope,DataService) {
-        
+	.controller('AppCtrl', function($scope, $rootScope, DataService, ModalService) {
+
+        $scope.example = {
+        	value: new Date(2015, 3, 22),
+        	currentDate: new Date()
+        };
+
         $scope.getdate = () => {
         	console.log($scope.date);
         	const dateAppointment = new Date($scope.date).getTime();
@@ -93,14 +94,85 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
         	DataService.addDate(dateAppointment)
 				.then( (data, status, headers) => {
 					console.log(data);
+					console.log(data.data);
+					const dataArray = data.data;
+					//console.log(dataArray[0].date);
+					const scheduleDay = [
+						{	date: "",
+							time: "10:00",
+							free: true
+						},
+						{	date: "",
+							time: "11:00",
+							free: true
+						},
+						{	date: "",
+							time: "12:00",
+							free: true
+						},
+						{	date: "",
+							time: "13:00",
+							free: true
+						},
+						{	date: "",
+							time: "16:00",
+							free: true
+						},
+						{	date: "",
+							time: "17:00",
+							free: true
+						},
+						{	date: "",
+							time: "18:00",
+							free: true
+						},
+						{	date: "",
+							time: "19:00",
+							free: true
+						}
+					]
+					const validatedSchedules = scheduleDay.map ((elem) =>{
+						dataArray.forEach ( (item) =>{
+							console.log("item")
+							console.log(item.time)
+							if (item.time === undefined){
+								console.log("if item")
+								console.log(item.time)
+								elem.date = item.date;
+								if(elem.time == item.time){
+									elem.free = false;
+								}
+							}
+						})
+						return elem;
+					})
+					$rootScope.appointments = validatedSchedules;
+					console.log(validatedSchedules);
 		        })
-		        .catch( err => console.log(err) )
-        	// let day = $scope.date;
-        	// let temp = day.stringify.split(" ");
-        	//let new array = [temp[1],temp[2],temp[3]];
-        	//let day = temp[1]
-        	//DataService.getDay(day);
+		        .catch( err => console.log(err) ) 	
         }
+
+        $scope.showAppointmentModal = (appointment) => {
+
+        	console.log("controller");
+        	console.log(appointment.date);
+        	const temp = new Date(appointment.date).getTime();
+        	console.log(temp);
+        	console.log(appointment.time);
+			$rootScope.selectedappointment = appointment;
+
+			ModalService.showModal({
+				templateUrl: "/viewsClient/modalappointment.html",
+				controller: "CustomController"
+			})
+			.then( (modal) => {
+				console.log("modal close....")
+				modal.close.then(function(result) {
+					$scope.customResult = "All good!";
+				});
+			})
+			.catch( err => console.log(err) )
+		};
     })
 
 

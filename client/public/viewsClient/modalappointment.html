@@ -1,0 +1,16 @@
+<div id="custom-modal">
+	<div id="overlay">
+		<div class="conitaner">
+			<div class="col-xs-6 col-md-6 ">
+				<h4> Dia: {{ selectedappointment.date }} </h4>
+				<h4> Hora: {{ selectedappointment.time }} </h4>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<label class="control-label" for="input">Nombre:</label>
+			<input class="form-control" type="text" name="name" required="">
+		</div>
+		<a href ng-click="close()">Close</a>
+	</div>
+	<div id="fade"></div>
+</div>

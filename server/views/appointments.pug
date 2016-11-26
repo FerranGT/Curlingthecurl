@@ -9,5 +9,23 @@ block content
 				.form-group
 					label Fecha:
 					.control
-						input.form-control(type='date', ng-model='date' ng-change='getdate()')
+						input.form-control#datePicker(type='date', min="{{example.currentDate | date: 'yyyy-MM-dd'}}" ng-model='date' ng-change='getdate()')
+
+	.container.container-create(ng-controller='AppCtrl')
+		h1.text-center Horarios disponibles
+		table.table.table-hover
+			//thead
+				tr
+					th #
+					th Title
+					th Type
+					th {{ appointments }}
+			tbody
+				tr(ng-repeat='appointment in appointments')
+					th(scope='row') {{$index}}
+					td {{ appointment.time }} 
+					td {{ appointment.free }} 
+					td
+						a.button_info.btn.btn-default.btn-lg(href='', ng-click='showAppointmentModal(appointment)') Reservar
+
 
