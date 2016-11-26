@@ -88,15 +88,19 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
         };
 
         $scope.getdate = () => {
+        	console.log("$scope.date");
         	console.log($scope.date);
         	const dateAppointment = new Date($scope.date).getTime();
+        	console.log("dateAppointment");
         	console.log(dateAppointment);
+        	console.log(new Date(dateAppointment));
+
         	DataService.addDate(dateAppointment)
 				.then( (data, status, headers) => {
-					console.log(data);
-					console.log(data.data);
-					const dataArray = data.data;
-					//console.log(dataArray[0].date);
+					//console.log(data);
+					//console.log(data.data);
+					const serverData = data.data;
+					//console.log(serverData[0].date);
 					const scheduleDay = [
 						{	date: "",
 							time: "10:00",
@@ -131,20 +135,14 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 							free: true
 						}
 					]
-					const validatedSchedules = scheduleDay.map ((elem) =>{
-						dataArray.forEach ( (item) =>{
-							console.log("item")
-							console.log(item.time)
-							if (item.time === undefined){
-								console.log("if item")
-								console.log(item.time)
-								elem.date = item.date;
-								if(elem.time == item.time){
-									elem.free = false;
-								}
+					const validatedSchedules = scheduleDay.map ((client) =>{
+						client.date = $scope.date
+						serverData.forEach ( (server) =>{
+							if(client.time == server.time){
+								client.free = false;
 							}
 						})
-						return elem;
+						return client;
 					})
 					$rootScope.appointments = validatedSchedules;
 					console.log(validatedSchedules);
@@ -154,12 +152,18 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 
         $scope.showAppointmentModal = (appointment) => {
 
-        	console.log("controller");
+        	console.log("Modal controller");
         	console.log(appointment.date);
-        	const temp = new Date(appointment.date).getTime();
-        	console.log(temp);
-        	console.log(appointment.time);
+        	//const temp = new Date(appointment.date).getTime();
+        	//console.log(temp);
+        	//console.log(appointment.time);
+        	const string = String(appointment.date)
+        	const splitarray = string.split(" ")
+        	const finalarray = [splitarray[2],splitarray[1],splitarray[3]]
+        	appointment.dateString = finalarray.join(" ");
 			$rootScope.selectedappointment = appointment;
+			console.log("$rootScope.selectedappointment");
+        	console.log($rootScope.selectedappointment.date);
 
 			ModalService.showModal({
 				templateUrl: "/viewsClient/modalappointment.html",
