@@ -6,7 +6,10 @@ const collection = 'appointments';
 const appointmentSchema = new mongoose.Schema({
 	date: Number,
 	time: String,
-	name: String
+	name: String,
+	dateString: String,
+	tlf: Number,
+	free: Boolean
 },
 { collection });
 

@@ -20,5 +20,13 @@ angular.module('myServices',[])
 			return $http.get("http://localhost:3000/appointments/show/" + dateAppointment)
 		}
 
-		return { getProducts, deleteItem, updateItem, addDate }
+		function newAppointment(selectedAppointment){
+			console.log("service appointment");
+			console.log(selectedAppointment);
+			const stringAppointment = JSON.stringify(selectedAppointment)
+			return $http.post("http://localhost:3000/appointments/", stringAppointment)
+
+		}
+
+		return { getProducts, deleteItem, updateItem, addDate, newAppointment }
 	})

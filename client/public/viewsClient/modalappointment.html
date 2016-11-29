@@ -1,23 +1,34 @@
-<div id="custom-modal">
+<div id="custom-modal" ng-controller="AppCtrl">
 	<div id="overlay">
-		<div class="conitaner">
+		<div class="conitaner" ng-show="afterBooking">
 			<div class="col-xs-6 col-md-6 ">
+				<h4> TU RESERVA HA SIDO GESTIONADA CORRECTAMENTE </h4>
+				<h4> QUE TENGAS UN BUEN DIA </h4>
+			</div>
+			<div>
+				<a href ng-click="close()">Close</a>
+			</div>
+		</div>
+		<div class="conitaner" ng-show="beforeBooking">
+			<div class="col-xs-3 col-md-3 ">
 				<h4> RESERVAR CITA </h4>
 				<h4> Dia: {{ selectedappointment.dateString }} </h4>
 				<h4> Hora: {{ selectedappointment.time }} </h4>
 			</div>
-		</div>
-		<div class="col-md-4">
-			<label class="control-label" for="input">Nombre:</label>
-			<input class="form-control" type="text" name="name" required="">
-		</div>
-		<div class="col-md-4">
-			<label class="control-label" for="input">Telefono:</label>
-			<input class="form-control" type="number" name="tlf" required="">
-		</div>
-		<a class="button_info btn btn-default btn-lg" href="" ng-click="showAppointmentModal(appointment)">Reservar</a>
-		<div>
-			<a href ng-click="close()">Close</a>
+			<div class="col-md-4">
+				<label class="control-label" for="input">Nombre:</label>
+				<input class="form-control" type="text" ng-model="name" required="">
+			</div>
+			<div class="col-md-4">
+				<label class="control-label" for="input">Telefono:</label>
+				<input class="form-control" type="number" ng-model="tlf" required="">
+			</div>
+			<div>
+				<a class="button_info btn btn-default btn-lg" href="" ng-click="addAppointment(selectedappointment)">Reservar</a>
+			</div>
+			<div>
+				<a class="closemodal" href ng-click="close()">Close</a>
+			</div>
 		</div>
 	</div>
 	<div id="fade"></div>

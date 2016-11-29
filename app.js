@@ -23,8 +23,10 @@ const app = express()
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname , '/server/views'));
+
 app.use( express.static('./client/public') )
 app.use( bodyparser.urlencoded({ extended: false }) )
+app.use( bodyparser.json() )
 
 app.use('/products', routerProducts )
 app.use('/services', routerServices )
