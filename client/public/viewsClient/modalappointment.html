@@ -15,17 +15,19 @@
 				<h4> Dia: {{ selectedappointment.dateString }} </h4>
 				<h4> Hora: {{ selectedappointment.time }} </h4>
 			</div>
-			<div class="col-md-4">
-				<label class="control-label" for="input">Nombre:</label>
-				<input class="form-control" type="text" ng-model="name" ng-required="true">
-			</div>
-			<div class="col-md-4">
-				<label class="control-label" for="input">Telefono:</label>
-				<input class="form-control" type="number" ng-model="tlf" ng-required="required">
-			</div>
-			<div>
-				<a class="button_info btn btn-default btn-lg" href="" ng-click="addAppointment(selectedappointment)">Reservar</a>
-			</div>
+			<form action="" ng-submit="addAppointment(selectedappointment); $event.preventDefault();">
+				<div class="col-md-4">
+					<label class="control-label" for="input">Nombre:</label>
+					<input class="form-control" type="text" ng-model="name" required>
+				</div>
+				<div class="col-md-4">
+					<label class="control-label" for="input">Telefono:</label>
+					<input class="form-control" type="number" ng-model="tlf" required>
+				</div>
+				<div>
+					<button type="submit" class="button_info btn btn-default btn-lg" href="" >Reservar</button>
+				</div>
+			</form>
 			<div>
 				<a class="closemodal" href ng-click="close(selectedappointment)">Close</a>
 			</div>

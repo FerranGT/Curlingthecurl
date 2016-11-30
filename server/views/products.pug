@@ -2,7 +2,6 @@ extends layout
 
 block content
 	.container.theme-showcase(role='main', ng-controller='productsCtrl')
-		h1= title
 		#product-container
 			.show_product.text-center(ng-repeat='product in products')
 				.image_product
