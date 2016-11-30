@@ -4,9 +4,9 @@ const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise;
 
-//const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
+const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
 
-const urlDB = process.env.URL_DB || "mongodb://localhost:27017/curlingthecurl"
+let urlDB = process.env.URL_DB || "mongodb://localhost:27017/curlingthecurl"
 
 const db = mongoose.connection;
 db.on('error', () => console.log('connection error:') );

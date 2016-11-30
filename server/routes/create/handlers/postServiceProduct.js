@@ -3,6 +3,7 @@ const Article = require('../../../models/articles')
 function postServiceProduct (req,res) {
 
 	let articleData = req.body;
+	console.log(req.body)
 
 	let myArticle = new Article(articleData);
 	
