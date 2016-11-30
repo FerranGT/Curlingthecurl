@@ -24,7 +24,7 @@ block content
 				tr(ng-repeat='appointment in appointments')
 					th(scope='row' ng-class="appointment.free ? 'class_true' : 'class_false'") {{$index}}
 					td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.time }} 
-					td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.free }} 
+					//td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.free }} 
 					td(ng-class="appointment.free ? 'class_true' : 'class_false'")
 						a.button_info.btn.btn-default.btn-lg(href='', ng-show='appointment.free ', ng-click='showAppointmentModal(appointment)') Reservar
 

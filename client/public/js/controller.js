@@ -176,12 +176,10 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 			})
 			.then( (modal) => {
 				console.log("modal close....")
-				modal.close.then(function(result) {
-					debugger
-					$location.path().replace();
-					//$route.reload()
-					$window.location.reload();
-					$scope.customResult = "All good!";
+				modal.close.then(function(result, selectedappointment) {
+					if ($rootScope.selectedappointment.name !== undefined){
+							$rootScope.selectedappointment.free = false;
+					}
 				});
 			})
 			.catch( err => console.log(err) )

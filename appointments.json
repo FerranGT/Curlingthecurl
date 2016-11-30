@@ -1,7 +1,286 @@
 [
 {
 "_id": "5835616e543ec9465471ab1c",
-"date": "Nov 20 2016",
-"time": "12:30:00"
+"date": 1480374000000,
+"time": "12:00"
+},
+{
+"_id": "58381d9295a9312a6d9403a6",
+"date": 1480374000000,
+"time": "17:00"
+},
+{
+"_id": "583d8bea3857ced0db0f6522",
+"dateString": "29 Nov 2016",
+"time": "10:00",
+"free": false,
+"date": 1480374000000,
+"name": "Ferran",
+"tlf": 666112233,
+"__v": 0
+},
+{
+"_id": "583d8c303857ced0db0f6523",
+"dateString": "29 Nov 2016",
+"time": "19:00",
+"free": true,
+"date": 1480374000000,
+"name": "Cris",
+"tlf": 666223344,
+"__v": 0
+},
+{
+"_id": "583d91b1870b0fe0a65c65d0",
+"dateString": "30 Nov 2016",
+"time": "10:00",
+"free": true,
+"date": 1480460400000,
+"name": "Pepelu",
+"tlf": 611223344,
+"__v": 0
+},
+{
+"_id": "583d927262b7ece2a56ddbf6",
+"dateString": "01 Dec 2016",
+"time": "16:00",
+"free": true,
+"date": 1480546800000,
+"name": "Miriam",
+"tlf": 612334455,
+"__v": 0
+},
+{
+"_id": "583d9651d90de3ed7d857828",
+"dateString": "23 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1482447600000,
+"name": "Koala",
+"tlf": 666112233,
+"__v": 0
+},
+{
+"_id": "583da32ad90de3ed7d85782a",
+"dateString": "07 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1481065200000,
+"name": "Manolo",
+"tlf": 623232323,
+"__v": 0
+},
+{
+"_id": "583da56a9f59bd17f4d8da51",
+"dateString": "13 Dec 2016",
+"time": "12:00",
+"free": true,
+"date": 1481583600000,
+"name": "Maria",
+"tlf": 655121212,
+"__v": 0
+},
+{
+"_id": "583da5e3154083196e30597a",
+"dateString": "15 Dec 2016",
+"time": "11:00",
+"free": true,
+"date": 1481756400000,
+"name": "Pepe",
+"tlf": 662223344,
+"__v": 0
+},
+{
+"_id": "583e900347e9301c0c1b4f49",
+"dateString": "30 Nov 2016",
+"time": "19:00",
+"free": true,
+"date": 1480460400000,
+"name": "Ruben",
+"tlf": 633221155,
+"__v": 0
+},
+{
+"_id": "583e910341b7951ef2363905",
+"dateString": "15 Dec 2016",
+"time": "19:00",
+"free": true,
+"date": 1481756400000,
+"name": "Pere",
+"tlf": 633283390,
+"__v": 0
+},
+{
+"_id": "583e913dc905d51fc650a1ca",
+"dateString": "16 Dec 2016",
+"time": "17:00",
+"free": true,
+"date": 1481842800000,
+"name": "Tartaso",
+"tlf": 621212121,
+"__v": 0
+},
+{
+"_id": "583e9635c5df49245ad5319e",
+"dateString": "14 Dec 2016",
+"time": "19:00",
+"free": true,
+"date": 1481670000000,
+"name": "pepito",
+"tlf": 633221122,
+"__v": 0
+},
+{
+"_id": "583e9724238a9f2e7a4fd67b",
+"dateString": "19 Dec 2016",
+"time": "18:00",
+"free": true,
+"date": 1482102000000,
+"name": "Peret",
+"tlf": 633110099,
+"__v": 0
+},
+{
+"_id": "583e975f238a9f2e7a4fd67c",
+"dateString": "10 Dec 2016",
+"time": "18:00",
+"free": true,
+"date": 1481324400000,
+"name": "Judit",
+"tlf": 633221188,
+"__v": 0
+},
+{
+"_id": "583e97cddf2b6730217157c2",
+"dateString": "05 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1480892400000,
+"name": "Pepito Grilo",
+"tlf": 6332873,
+"__v": 0
+},
+{
+"_id": "583e9808c3517531065e49c8",
+"dateString": "16 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1481842800000,
+"name": "Cristian",
+"tlf": 666223344,
+"__v": 0
+},
+{
+"_id": "583e9838c3517531065e49c9",
+"dateString": "16 Dec 2016",
+"time": "11:00",
+"free": true,
+"date": 1481842800000,
+"name": "Pepita",
+"tlf": 63322155,
+"__v": 0
+},
+{
+"_id": "583e9884b079b73257672e6e",
+"dateString": "18 Jan 2017",
+"time": "16:00",
+"free": true,
+"date": 1484694000000,
+"name": "Jose",
+"tlf": 666666666,
+"__v": 0
+},
+{
+"_id": "583e98c8da312d3315eb1e11",
+"dateString": "19 Jan 2017",
+"time": "17:00",
+"free": true,
+"date": 1484780400000,
+"name": "Margarita",
+"tlf": 666332211,
+"__v": 0
+},
+{
+"_id": "583e99fd0317d0367920ed3a",
+"dateString": "22 Dec 2016",
+"time": "19:00",
+"free": true,
+"date": 1482361200000,
+"name": "Alex",
+"tlf": 655221188,
+"__v": 0
+},
+{
+"_id": "583e9a28558d1e36f482b359",
+"dateString": "30 Dec 2016",
+"time": "19:00",
+"free": true,
+"date": 1483052400000,
+"name": "Josefa",
+"tlf": 666112233,
+"__v": 0
+},
+{
+"_id": "583e9abe4e2e9f38991e6fed",
+"dateString": "21 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1482274800000,
+"name": "Piere",
+"tlf": 666225522,
+"__v": 0
+},
+{
+"_id": "583e9af53c129e394ccff0c1",
+"dateString": "24 Jan 2017",
+"time": "10:00",
+"free": true,
+"date": 1485212400000,
+"name": "Pedro",
+"tlf": 666334411,
+"__v": 0
+},
+{
+"_id": "583ea58c7bdf89508365e900",
+"dateString": "22 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1482361200000,
+"name": "Alex",
+"tlf": 666339934,
+"__v": 0
+},
+{
+"_id": "583ea7e7ab34c056e6629b5c",
+"dateString": "01 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1480546800000,
+"__v": 0
+},
+{
+"_id": "583ea839ab34c056e6629b5d",
+"dateString": "17 Dec 2016",
+"time": "10:00",
+"free": true,
+"date": 1481929200000,
+"__v": 0
+},
+{
+"_id": "583eaa1aab34c056e6629b5e",
+"dateString": "23 Dec 2016",
+"time": "19:00",
+"free": true,
+"date": 1482447600000,
+"__v": 0
+},
+{
+"_id": "583eabe195b498623570a61a",
+"dateString": "30 Nov 2016",
+"time": "16:00",
+"free": true,
+"date": 1480460400000,
+"name": "Ferran",
+"tlf": 622882211,
+"__v": 0
 }
 ]
