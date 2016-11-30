@@ -29,6 +29,7 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 			.then( (modal) => {
 				console.log("modal close....")
 				modal.close.then(function(result) {
+					console.log("Closing!!!")
 					$scope.customResult = "All good!";
 				});
 			})
@@ -78,9 +79,10 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 
 	.controller('CustomController', function($scope, close) {
 		$scope.close = close;
+		console.log("Lo encontre?")
 	})
 
-	.controller('AppCtrl', function($scope, $rootScope, DataService, ModalService) {
+	.controller('AppCtrl', function($scope, $rootScope, $location, DataService, ModalService) {
 
         $scope.example = {
         	value: new Date(2015, 3, 22),
@@ -175,6 +177,10 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 			.then( (modal) => {
 				console.log("modal close....")
 				modal.close.then(function(result) {
+					debugger
+					$location.path().replace();
+					//$route.reload()
+					$window.location.reload();
 					$scope.customResult = "All good!";
 				});
 			})

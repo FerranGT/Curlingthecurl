@@ -4,6 +4,8 @@ const express = require('express')
 const db = require('./server/db');
 const MongoClient = require('mongodb').MongoClient
 
+const fs = require('fs')
+
 const bodyparser = require('body-parser')
 
 const http = require('http');
@@ -16,7 +18,10 @@ const routerItems = require('./server/routes/items');
 const routerAppointments = require('./server/routes/appointments');
 const routerApi = require('./server/routes/api');
 
-const PORT = 3000
+const thereIsDotEnv = fs.existsSync('.env')
+if ( thereIsDotEnv ) require('dotenv').load()
+
+const PORT = process.env.PORT;
 
 const app = express()
 
