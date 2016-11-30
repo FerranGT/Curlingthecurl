@@ -51,7 +51,7 @@ block content
 								td {{ ps.title }} 
 								td {{ ps.type }} 
 								td  
-									a#link-update(href='http://localhost:3000/items/update/{{ps._id}}', ng-click='updateNewPage(ps)') update
+									a#link-update(href='/items/update/{{ps._id}}', ng-click='updateNewPage(ps)') update
 									br
 									a#link-delete(href="#", ng-click='deleteElement(ps._id)') delete
 						
