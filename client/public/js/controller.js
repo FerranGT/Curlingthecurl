@@ -56,14 +56,14 @@ angular.module("myApp",['myServices','angularModalService','ngAnimate'])
 
 		}
 
-		$scope.updateNewPage = (id) => {
-			console.log("controller: " + id);
-			DataService.updateItem(id)
-				.success( (data, status, headers) => {
-					console.log("updated succesfully!")
-		        })
-		        .catch( err => console.log(err) )
-		}
+		// $scope.updateNewPage = (id) => {
+		// 	console.log("controller: " + id);
+		// 	DataService.updateItem(id)
+		// 		.success( (data, status, headers) => {
+		// 			console.log("updated succesfully!")
+		//         })
+		//         .catch( err => console.log(err) )
+		// }
 
 		$scope.updateElement = (id) => {
 			console.log("controller: " + id);

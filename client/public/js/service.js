@@ -10,10 +10,10 @@ angular.module('myServices',[])
 			return $http.delete("/items/" + id)
 		}
 
-		function updateItem(id){
-			console.log("service: " + id);
-			return $http.put("/items/" + id)
-		}
+		// function updateItem(id){
+		// 	console.log("service: " + id);
+		// 	return $http.put("/items/" + id)
+		// }
 
 		function addDate(dateAppointment){
 			console.log("service: " + dateAppointment);
@@ -28,5 +28,5 @@ angular.module('myServices',[])
 
 		}
 
-		return { getProducts, deleteItem, updateItem, addDate, newAppointment }
+		return { getProducts, deleteItem, addDate, newAppointment }
 	})
