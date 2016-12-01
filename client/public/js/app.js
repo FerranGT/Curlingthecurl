@@ -1,1 +1,1 @@
-angular.module('myApp', ['ui.bootstrap']);
+angular.module('myApp', ['ui.bootstrap','angularModalService','ngAnimate','myControllers']);
