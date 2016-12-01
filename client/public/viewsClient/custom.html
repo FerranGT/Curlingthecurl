@@ -1,24 +1,25 @@
 <div id="custom-modal">
 	<div id="overlay">
-		<div class="show_moto">
+		<div>
 			<h4 class="text-center titlepromodal">{{ selectedProduct.title }}</h4>
 			<div class="row">
 				<div class="col-xs-6 col-md-6 ">
 					<div class="image_product_modal">
 						<img src="{{ selectedProduct.url}}" class="image_size_modal img-responsive">
 					</div>
+					<div class="posclose">
+						<a href ng-click="close()">Close</a>
+					</div>
 				</div>
 				<div class="col-xs-6 col-md-6 ">
 					<div class="modal_scroll">
-						<h4> Descripción: </h4>
+						<h4 class="price_custom"> Descripción: </h4>
 						<p> {{ selectedProduct.desc }} </p>
-						<h4> Precio: {{ selectedProduct.price }} €</h4>
+						<h4 class="price_custom"> Precio: {{ selectedProduct.price }} €</h4>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<a href ng-click="close()">Close</a>
 	</div>
 	<div id="fade"></div>
 </div>

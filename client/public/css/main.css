@@ -89,6 +89,7 @@ body {
 
 #link-delete {
   background: #FF8B4D;
+  width: 92%;
 }
 
 .searchengine {
@@ -232,4 +233,24 @@ body {
   font-family: Open Sans;
   font-weight: 700;
   margin-bottom: 15px;
+}
+
+.price_custom {
+  margin-top: 15px;
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.posclose {
+  margin-top: -40px;
+}
+
+.image_product_modal {
+  height: 350px;
+  padding: 5px;
+  border: 1px solid #d7d7d7;
+  margin-bottom: 60px;
+  padding-bottom: 355px !important;
+  margin-top: 15px;
 }
