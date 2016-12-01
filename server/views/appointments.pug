@@ -1,31 +1,33 @@
 extends layout
 
 block content
-
-	.container.container-create
-		div(ng-controller='AppCtrl')
-			form
-				h2 Reserva Cita		
-				.form-group
-					label Fecha:
-					.control
-						input.form-control#datePicker(type='date', min="{{example.currentDate | date: 'yyyy-MM-dd'}}" ng-model='date' ng-change='getdate()')
-
-	.container.container-create(ng-controller='AppCtrl')
-		h1.text-center Horarios disponibles
-		table.table.table-hover
-			//thead
-				tr
-					th #
-					th Title
-					th Type
-					th {{ appointments }}
-			tbody
-				tr(ng-repeat='appointment in appointments')
-					th(scope='row' ng-class="appointment.free ? 'class_true' : 'class_false'") {{$index}}
-					td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.time }} 
-					//td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.free }} 
-					td(ng-class="appointment.free ? 'class_true' : 'class_false'")
-						a.button_info.btn.btn-default.btn-lg(href='', ng-show='appointment.free ', ng-click='showAppointmentModal(appointment)') Reservar
+	div(ng-controller='AppCtrl')
+		.container.container-create
+			.row
+				.col-md-3
+					div
+						form
+							h3.cita Reserva Cita		
+							.form-group
+								label Fecha:
+								.control
+									input.form-control#datePicker(type='date', min="{{example.currentDate | date: 'yyyy-MM-dd'}}" ng-model='date' ng-change='getdate()')
+									
+				.col-md-8.col-md-offset-1
+					h3.horarios(ng-show='date') Horarios disponibles
+					table.table.table-hover.tableapp
+						//thead
+							tr
+								th #
+								th Title
+								th Type
+								th {{ appointments }}
+						tbody
+							tr(ng-repeat='appointment in appointments')
+								th(scope='row' ng-class="appointment.free ? 'class_true' : 'class_false'") {{$index}}
+								td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.time }} 
+								//td(ng-class="appointment.free ? 'class_true' : 'class_false'") {{ appointment.free }} 
+								td(ng-class="appointment.free ? 'class_true' : 'class_false'")
+									a.button_info.btn.btn-default.btn-lg.btnreservar(href='', ng-show='appointment.free ', ng-click='showAppointmentModal(appointment)') Reservar
 
 

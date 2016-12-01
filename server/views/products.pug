@@ -5,13 +5,10 @@ block content
 		#product-container
 			.show_product.text-center(ng-repeat='product in products')
 				.image_product
-					img.image_size.img-responsive(ng-src='{{ product.url }}')
-					h5
-							span  {{ product.title }} 
-							h5 {{ product.price }} €
-
-							p
-								a.button_info.btn.btn-default.btn-lg(href='', ng-click='showCustom(product)') + info
+					img.image_size.img-responsive.imageproduct(ng-src='{{ product.url }}')
+					span  {{ product.title }} 
+					h4 {{ product.price }} €
+					a.button_info.btn.btn-default.btn-lg(href='', ng-click='showCustom(product)') + info
 
 
 

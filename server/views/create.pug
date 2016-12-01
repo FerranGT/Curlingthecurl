@@ -36,6 +36,23 @@ block content
 				.col-md-12
 					button.btncrear.btn.botton_create(type='submit') Crear
 
+			.col-md-12
+				div.searchengine
+					h3.text-center Buscador en la BBDD
+					form.form-grup(action='', method='', role='form')
+						.form-group
+							label(for='sel1') Filtrar por tipo:
+							select#sel1.form-control(name='type', ng-model='queryType')
+								option(value='') Ningún filtro aplicado
+								option producto
+								option servicio
+
+						//	label(for='') Filtrar por tipo
+							input.form-control(ng-model='queryType', type='text', id='', placeholder='Introduce producto o servicio')
+						.form-group
+							label(for='') Filtrar por nombre
+							input.form-control(ng-model='queryArticle', type='text', id='', placeholder='Introduce el nombre del articulo')
+
 		.col-md-6#container-right(ng-controller='productsCtrl')
 					h1.text-center Base de Datos
 					table.table.table-hover
@@ -46,13 +63,13 @@ block content
 								th Type
 								th Action
 						tbody
-							tr(ng-repeat='ps in productsServices | orderBy:"type"')
+							tr(ng-repeat='ps in productsServices | orderBy:"type" | filter: { type : queryType, title : queryArticle } as results')
 								th(scope='row') {{$index}}
 								td {{ ps.title }} 
 								td {{ ps.type }} 
 								td  
-									a#link-update(href='/items/update/{{ps._id}}', ng-click='') update
+									a#link-update.button_info.btn.btn-default.btn-lg(href='/items/update/{{ps._id}}', ng-click='') update
 									br
-									a#link-delete(href="#", ng-click='deleteElement(ps._id)') delete
+									a#link-delete.button_info.btn.btn-default.btn-lg(href="#", ng-click='deleteElement(ps._id)') delete
 						
 
