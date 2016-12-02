@@ -1,13 +1,47 @@
-nav.navbar.navbar-inverse
-  .container
+style.
+  .horizontal-collapse {
+  height: 70px;
+  }
+  .navbar-collapse.in {
+  overflow-y: hidden;
+  }
+div(ng-controller='CollapseDemoCtrl')
+  nav.navbar.navbar-inverse(role='navigation')
     .navbar-header
-      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+      button.navbar-toggle(type='button', ng-click='isNavCollapsed = !isNavCollapsed')
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
       img.logo(src='/img/curling_logo_blanc.png')
-    #navbar.navbar-collapse.collapse
+    .collapse.navbar-collapse(uib-collapse='isNavCollapsed')
+      ul.nav.navbar-nav
+        li( class=(title === 'Curling The Curl Styling' ? 'active' : '') )
+          a(href='/') Home
+        li(class=(title === 'Products' ? 'active' : '') )
+          a(href='/products') Productos
+        li(class=(title === 'Services' ? 'active' : '') )
+          a(href='/services') Servicios
+        li(class=(title === 'Appointments' ? 'active' : '') )
+          a(href='/appointments') Cita Online
+        li(class=(title === 'Create' ? 'active' : '') )
+          a(href='/create') Administrador
+
+
+
+
+
+
+//nav.navbar.navbar-inverse
+  .container
+    .navbar-header
+      button.navbar-toggle.btn-navbar.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar', ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      img.logo(src='/img/curling_logo_blanc.png')
+    #navbar.navbar-collapse.collapse.nav-collapse(collapse="navCollapsed")
       ul.nav.navbar-nav
         li( class=(title === 'Curling The Curl Styling' ? 'active' : '') )
           a(href='/') Home
