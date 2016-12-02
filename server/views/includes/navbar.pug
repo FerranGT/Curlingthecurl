@@ -14,18 +14,18 @@ div(ng-controller='CollapseDemoCtrl')
         span.icon-bar
         span.icon-bar
       img.logo(src='/img/curling_logo_blanc.png')
-    .collapse.navbar-collapse(uib-collapse='isNavCollapsed')
+    .collapse.navbar-collapse.navbackground(uib-collapse='isNavCollapsed')
       ul.nav.navbar-nav
         li( class=(title === 'Curling The Curl Styling' ? 'active' : '') )
-          a(href='/') Home
+          a.titlecollapse(href='/') Home
         li(class=(title === 'Products' ? 'active' : '') )
-          a(href='/products') Productos
+          a.titlecollapse(href='/products') Productos
         li(class=(title === 'Services' ? 'active' : '') )
-          a(href='/services') Servicios
+          a.titlecollapse(href='/services') Servicios
         li(class=(title === 'Appointments' ? 'active' : '') )
-          a(href='/appointments') Cita Online
+          a.titlecollapse(href='/appointments') Cita Online
         li(class=(title === 'Create' ? 'active' : '') )
-          a(href='/create') Administrador
+          a.titlecollapse(href='/create') Administrador
 
 
 

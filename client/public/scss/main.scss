@@ -133,12 +133,22 @@ body{
 
 .navbar{
 	margin-bottom: 0px;
+	height: 51px;
+	background-color: #31679c !important;
+	z-index:1
+}
+.navbackground{
+	background-color: #31679c !important;
 }
 .logo{
 	height: 35px;
     margin-top: 8px;
     margin-right: 120px;
-    margin-left: 120px;
+    padding-left: 17px;
+}
+.titlecollapse{
+	color: white !important;
+	background-color: #31679c !important;
 }
 
 //index
