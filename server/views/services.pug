@@ -2,8 +2,14 @@ extends layout
 
 block content
 	.container.theme-showcase(role='main', ng-controller='productsCtrl')
+		div.searchengine
+			h3 Buscador: {{ results.length }} de {{ services.length }} servicios
+			form.form-grup(action='', method='', role='form')
+				.form-group
+					label(for='') Filtrar por nombre
+					input.form-control(ng-model='queryArticle', type='text', id='', placeholder='Introduce el nombre del articulo')
 		#product-container
-			.show_product.text-center(ng-repeat='service in services')
+			.show_product.text-center(ng-repeat='service in services | filter: { title : queryArticle } as results')
 				.image_product
 					img.image_size.img-responsive(ng-src='{{ service.url }}')
 					h5
