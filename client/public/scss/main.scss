@@ -104,14 +104,16 @@ body{
 
 .container-create{
 	margin-top: 40px;
+	width: 95%;
 }
 
 #container-left{
-	margin-left: -90px;
+	//margin-left: -90px;
+	padding-right: 50px;
 }
 
 #container-right{
-	margin-left: 90px;
+	//margin-left: 90px;
 }
 
 #link-update{
@@ -247,7 +249,7 @@ body{
 	margin-bottom: 45px;
 }
 .modalsize{
-	height: 50% !important;
+	height: 60% !important;
 }
 .after{
 	font-size: 22px;
