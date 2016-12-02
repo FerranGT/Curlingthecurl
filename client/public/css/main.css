@@ -70,6 +70,24 @@ body {
   margin-bottom: 20px;
 }
 
+@media (max-width: 991px) {
+  .show_product {
+    width: 29%;
+  }
+}
+
+@media (max-width: 768px) {
+  .show_product {
+    width: 45%;
+  }
+}
+
+@media (max-width: 529px) {
+  .show_product {
+    width: 100%;
+  }
+}
+
 .container-create {
   margin-top: 40px;
 }
